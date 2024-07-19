@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3299599942187334"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Present Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-top: 10vh; /* Ajustado para descer 5cm (10vh) abaixo do topo */
+            margin-bottom: 30px;
+        }
+
+        #logo {
+            font-size: 42px;
+            color: #1877f2; /* Mantida a cor original */
+            font-family: 'Avenir Black', sans-serif; /* Mantida a fonte original */
+            font-weight: bold; /* Mantida a grossura da letra original */
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            margin-top: 150px; /* Ajustado para 5cm abaixo da posição original da logo */
+            margin-bottom: 50px; /* Margem inferior de 50px */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #quiz {
+            text-align: left;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        #pergunta {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #resposta {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #btnVerificar {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        #btnVerificar:hover {
+            background-color: #0056b3;
+        }
+
+        #btnProxima {
+            display: none;
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        #btnProxima:hover {
+            background-color: #218838;
+        }
+
+        #btnAnterior {
+            display: none;
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        #btnAnterior:hover {
+            background-color: #e0a800;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .tabela-be {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            overflow: auto;
+            max-height: 300px;
+        }
+
+        /* Estilo específico para a logo */
+        .logo {
+            font-size: 28px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <span id="logo" class="logo">English Beginner</span>
+    </div>
+    <div class="quiz-container">
+        <h1>Simple Present Quiz</h1>
+        <div id="quiz">
+            <p id="pergunta"></p>
+            <input type="text" id="resposta" placeholder="Digite sua resposta...">
+            <button class="btn" id="btnVerificar">Verificar</button>
+            <button class="btn" id="btnProxima">Próxima Pergunta</button>
+            <button class="btn" id="btnAnterior">Pergunta Anterior</button>
+            <div id="resultado"></div>
+            <div class="tabela-be" id="tabelaToBe">
+                <strong>Tabela Simple Present :</strong><br><br>
+                <pre>
+I - primeira pessoa do singular:           I watch
+You - segunda pessoa do singular:         You watch
+He - Terceira pessoa do singular (Masculino): He watches
+She - Terceira pessoa do singular (Feminino): She watches
+It - Terceira pessoa do singular:         It watches
+We - primeira pessoa do plural:           We watch
+You - segunda pessoa do plural:           You watch
+They - terceira pessoa do plural:         They watch
+
+Quando se trata de Nome de Pessoas:
+Exemplo 01:
+Renan likes to read books. (Terceira pessoa do singular)
+Imagine que no lugar do nome Renan está (He - pois seria ele) 
+logo seria Terceira pessoa do singular por isso o verbo vira likes
+
+Exemplo 02:
+Renan e Ana like to read books. (Terceira pessoa do plural)
+Já aqui são duas pessoas, no lugar ficaria (They - Eles ou Elas) Terceira pessoa do plural
+
+Palavras terminadas com 
+(CH,SH,SS,X,Z,O acrescentamos o ES ao final da palavra):
+
+CH: watch → he watches
+
+SH: wash → she washes
+
+SS: pass → it passes
+
+X: fix → he fixes
+
+Z: buzz → it buzzes
+O: go → he goes
+
+É importante observar que essas são regras gerais
+e existem exceções e variações na língua inglesa.
+Por exemplo, alguns verbos irregulares 
+têm formas diferentes na terceira pessoa do singular 
+(como "have" → "he has").
+
+Para verbos que terminam em Y precedido por uma consoante,
+troca-se o Y por IES na terceira pessoa do singular.
+
+
+
+Exemplo: "study" (estudar) → "he studies"
+
+Quando o verbo termina em Y precedido por uma vogal, como em "play",
+apenas adicionamos "-s" na terceira pessoa do singular.
+
+
+
+Exemplo: "play" (jogar) → "he plays"
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const perguntas = [
+    "1. (watch) He _______ a movie every night.",
+    "2. (teach) She _______ English at the university.",
+    "3. (reach) He _______ the top of the mountain yesterday.",
+    "4. (catch) We _______ the train on time.",
+    "5. (wash) John _______ his car every weekend.",
+    "6. (finish) They _______ their homework before dinner.",
+    "7. (miss) I _______ my bus this morning.",
+    "8. (relax) She _______ on the beach during her vacation.",
+    "9. (kiss) He _______ his wife goodbye before leaving.",
+    "10. (fix) We _______ the car ourselves.",
+    "11. (cross) She _______ the street carefully.",
+    "12. (buzz) The bee _______ around the garden.",
+    "13. (mix) He _______ all the ingredients together.",
+    "14. (go) They _______ to the park every Sunday.",
+    "15. (do) She _______ her homework in the evening.",
+    "16. (play) He _______ soccer with his friends.",
+    "17. (stay) We _______ at home on weekends.",
+    "18. (say) They _______ goodnight before bed.",
+    "19. (enjoy) She _______ reading books in her free time.",
+    "20. (visit) They _______ their grandparents every month.",
+    "21. (fix) He _______ the bike last weekend.",
+    "22. (box) We _______ up our belongings for the move.",
+    "23. (relax) She _______ in the hammock on weekends.",
+    "24. (finish) They _______ the project before the deadline.",
+    "25. (wish) I _______ you a happy birthday!",
+    "26. (brush) He _______ his teeth twice a day.",
+    "27. (crash) The waves _______ against the shore.",
+    "28. (flash) Lightning _______ across the sky.",
+    "29. (push) He _______ the door open.",
+    "30. (rush) They _______ to catch the bus.",
+    "31. (wash) She _______ the dishes after dinner.",
+    "32. (cross) He _______ the river by boat.",
+    "33. (buzz) The mosquito _______ around my head.",
+    "34. (relax) He _______ in the park after work.",
+    "35. (mix) They _______ the colors to create a new shade.",
+    "36. (box) She _______ up her old toys for donation.",
+    "37. (fix) We _______ the leaky faucet ourselves.",
+    "38. (miss) He _______ his flight due to traffic.",
+    "39. (do) They _______ yoga every morning.",
+    "40. (play) She _______ the piano beautifully.",
+    "41. (say) He _______ goodbye to his friends.",
+    "42. (stay) We _______ at a hotel during our vacation.",
+    "43. (enjoy) They _______ the concert last night.",
+    "44. (visit) She _______ her aunt in the hospital.",
+    "45. (wish) We _______ him good luck.",
+    "46. (brush) He _______ his dog’s fur every day.",
+    "47. (crash) The waves _______ against the rocks.",
+    "48. (flash) Lightning _______ in the distance.",
+    "49. (push) She _______ the stroller uphill.",
+    "50. (rush) He _______ to finish his homework.",
+    "51. (wash) They _______ the car on Sundays.",
+    "52. (cross) She _______ the finish line first.",
+    "53. (buzz) The bee _______ around the garden flowers.",
+    "54. (relax) He _______ in the hammock all afternoon.",
+    "55. (mix) They _______ the ingredients for the cake.",
+    "56. (box) She _______ up her old books for donation.",
+    "57. (fix) We _______ the computer ourselves.",
+    "58. (have) She _______ breakfast every morning before work.",
+    "59. (have) He _______ a cat named Whiskers as a pet.",
+    "60. (have) They _______ a meeting at 10 AM every Monday.",
+    "61. (have) We _______ dinner together as a family every evening.",
+    "62. (have) Maria _______ a lovely garden in her backyard.",
+    "63. (have) John and Sarah _______ three children.",
+    "64. (have) The company _______ a strict policy on punctuality.",
+    "65. (have) I _______ a cup of coffee with breakfast.",
+    "66. (have) He _______ an appointment with his dentist tomorrow.",
+    "67. (have) They _______ a soccer game every Saturday afternoon.",
+];
+
+const respostas = [
+"watches", "teaches", "reaches", "catch", "washes", "finish",
+"miss", "relaxes", "kisses", "fix", "crosses", "buzzes", "mixes",
+"go", "does", "plays", "stay", "say", "enjoys", "visit", "fixes",
+"box", "relaxes", "finish", "wish", "brushes", "crash", "flashes",
+"pushes", "rush", "washes", "cross", "buzzes", "relaxes", "mix",
+"boxes", "fix", "misses", "do", "plays", "says", "stay", "enjoy",
+"visits", "wish", "brushes", "crash", "flashes", "pushes", "rushes",
+"wash", "crosses", "buzzes", "relaxes", "mix", "boxes", "fix",
+"has", "has", "have", "have", "has", "have", "has", "have", "has",
+"have",
+
+];
+
+let indexPerguntaAtual = 0;
+const numPerguntas = perguntas.length;
+
+const perguntaElement = document.getElementById('pergunta');
+const respostaElement = document.getElementById('resposta');
+const resultadoElement = document.getElementById('resultado');
+const tabelaToBeElement = document.getElementById('tabelaToBe');
+const btnVerificar = document.getElementById('btnVerificar');
+const btnProxima = document.getElementById('btnProxima');
+const btnAnterior = document.getElementById('btnAnterior');
+
+function mostrarPergunta() {
+    perguntaElement.textContent = perguntas[indexPerguntaAtual];
+}
+
+function verificarResposta() {
+    const respostaUsuario = respostaElement.value.trim().toLowerCase();
+    const respostaCorreta = respostas[indexPerguntaAtual];
+    
+    if (respostaUsuario === respostaCorreta) {
+        resultadoElement.innerHTML = "<span style='color: green;'>Correto!</span>";
+    } else {
+        resultadoElement.innerHTML = "<span style='color: red;'>Incorreto. Tente novamente.</span>";
+        tabelaToBeElement.style.display = 'block'; // Mostra a tabela apenas se a resposta estiver incorreta
+    }
+
+    respostaElement.disabled = true;
+    btnVerificar.disabled = true;
+    btnProxima.style.display = 'inline-block';
+
+    if (indexPerguntaAtual > 0) {
+        btnAnterior.style.display = 'inline-block';
+    }
+}
+
+function proximaPergunta() {
+    indexPerguntaAtual++;
+    resetarQuiz();
+    mostrarPergunta();
+}
+
+function perguntaAnterior() {
+    indexPerguntaAtual--;
+    resetarQuiz();
+    mostrarPergunta();
+}
+
+function resetarQuiz() {
+    respostaElement.value = '';
+    respostaElement.disabled = false;
+    resultadoElement.innerHTML = '';
+    btnVerificar.disabled = false;
+    btnProxima.style.display = 'none';
+    btnAnterior.style.display = 'none';
+    tabelaToBeElement.style.display = 'none'; // Esconde a tabela ao resetar o quiz
+}
+
+// Event Listeners
+btnVerificar.addEventListener('click', verificarResposta);
+btnProxima.addEventListener('click', proximaPergunta);
+btnAnterior.addEventListener('click', perguntaAnterior);
+
+// Mostrar a primeira pergunta ao carregar
+mostrarPergunta();
+</script>
+</body>
+</html>
